@@ -1,13 +1,12 @@
 version: '3.1'
-
 services:
-    viz:
-        image: manomarks/visualizer
-        volumes:
-            - "/var/run/docker.sock:/var/run/docker.sock"
-        ports:
-            - "8090:8080"
-        deploy:
-            placement:
-                constraints:
-                    - node.role==manager
+ viz:
+  image: dockersamples/visualizer
+  volumes:
+   - "/var/run/docker.sock:/var/run/docker.sock"
+  ports:
+   - "8090:8080"
+  deploy:
+   placement:
+    constraints:
+     - node.role == manager
