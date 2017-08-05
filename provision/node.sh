@@ -29,9 +29,11 @@ END
 #  - Removes docker.socket from After
 #  - Sets LimitNOFILE=infinity
 #  - Removes -H fd:// from ExecStart 
-wget -O /lib/systemd/system/docker.service https://raw.githubusercontent.com/docker/docker/v17.03.0-ce/contrib/init/systemd/docker.service.rpm
-systemctl daemon-reload
-systemctl restart docker
+wget -O /lib/systemd/system/docker.service https://raw.githubusercontent.com/MarkoKacprzak/docker-swarm-mode-getting-started/master/docker.service.rpm
+sudo chown vagrant:vagrant docker.service
+sudo usermod -a -G docker vagrant
+sudo systemctl daemon-reload
+sudo systemctl restart docker
 
 # optional tools for learning 
 apt-get install -y -q ipvsadm tree
