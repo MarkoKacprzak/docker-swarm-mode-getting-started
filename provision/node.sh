@@ -30,7 +30,7 @@ END
 #  - Sets LimitNOFILE=infinity
 #  - Removes -H fd:// from ExecStart 
 wget -O /lib/systemd/system/docker.service https://raw.githubusercontent.com/MarkoKacprzak/docker-swarm-mode-getting-started/master/docker.service.rpm
-sudo chown vagrant:vagrant docker.service
+sudo chown vagrant:vagrant /lib/systemd/system/docker.service
 sudo usermod -a -G docker vagrant
 sudo systemctl daemon-reload
 sudo systemctl restart docker
