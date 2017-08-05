@@ -7,7 +7,6 @@ services:
    - "/var/run:/var/run"
    - "/sys:/sys"
    - "/var/lib/docker/:/var/lib/docker/"
-  restart: unless-stopped
   ports:
    - target: 8080
      published: 8080
