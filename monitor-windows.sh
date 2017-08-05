@@ -10,7 +10,7 @@ fi
 
 sessionname="monitor-$service"
 setdockerhost="export DOCKER_HOST=tcp://192.170.0.27:2376; "
-watch="$setdockerhost; watch -d -n 0.5 "
+watch="$setdockerhost watch -d -n 0.5 "
 servicels="$watch docker service ls"
 serviceinspect="$watch docker service inspect $service"
 serviceps="$watch docker service ps $service"
@@ -30,7 +30,7 @@ tmux send-keys "$serviceps" C-m
 
 tmux split-window -p 30 -v 
 # tmux select-pane -t 2
-tmux send-keys "$setdockerhost; clear" C-m
+tmux send-keys "$setdockerhost clear" C-m
 
 
 
