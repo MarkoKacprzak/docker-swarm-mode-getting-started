@@ -1,0 +1,19 @@
+---------------------------
+install choco (from side script)
+install vagrant
+
+cinst virtualbox
+cinst cyg-get
+cyg-get openssh
+cyg-get rsync
+cyg-get ncurses
+cyg-get procps-ng
+
+w cygwinie w .bash_profile dodac: (po utworzeniu przez docker_machine hosta m1)
+export DOCKER_HOST=tcp://192.170.0.27:2376
+export DOCKER_MACHINE_NAME=m1
+export DOCKER_TLS_VERIFY=1
+export DOCKER_CERT_PATH=c:\\Users\\marek\\.docker\\machine\\machines\\m1
+export TERM=cygwin
+
+-------------------------
